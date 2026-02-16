@@ -1,16 +1,16 @@
 entrypoint = "index.html"
-modules = ["web"]
+modules = ["web", "nodejs-20"]
 
 [nix]
 channel = "stable-24_11"
 packages = ["static-web-server"]
 
 [deployment]
-publicDir = "/"
+publicDir = "."
 deploymentTarget = "static"
 
 [workflows]
-runButton = "Serve static"
+runButton = "Project"
 
 [[workflows.workflow]]
 name = "Serve static"
@@ -25,8 +25,25 @@ Console logs are available in the Preview devtools or your browser devtools.\" &
 """
 waitForPort = 80
 
+[[workflows.workflow]]
+name = "Serve static"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node server.js"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
 [[ports]]
 localPort = 80
+externalPort = 80
+
+[[ports]]
+localPort = 5000
 externalPort = 80
 
 [agent]
