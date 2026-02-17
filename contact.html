@@ -86,9 +86,28 @@
           </div>
 
           <div class="contact-form-card">
-            <h3>Send Us a Message</h3>
+            <h3>Request an Appointment</h3>
+            <p class="form-subtitle">Complete the steps below and we'll reach out to get you started.</p>
+
+            <div class="stepper" id="stepper">
+              <div class="stepper-step active" data-step="1">
+                <div class="stepper-circle">1</div>
+                <span class="stepper-label">Your Info</span>
+              </div>
+              <div class="stepper-line"></div>
+              <div class="stepper-step" data-step="2">
+                <div class="stepper-circle">2</div>
+                <span class="stepper-label">Service Details</span>
+              </div>
+              <div class="stepper-line"></div>
+              <div class="stepper-step" data-step="3">
+                <div class="stepper-circle">3</div>
+                <span class="stepper-label">Contact Preferences</span>
+              </div>
+            </div>
+
             <form id="contactForm" novalidate>
-              <div class="form-row">
+              <div class="form-step active" data-step="1">
                 <div class="form-group">
                   <label for="fullName">Full Name <span class="required">*</span></label>
                   <input type="text" id="fullName" class="form-input" placeholder="Your full name" required>
@@ -99,45 +118,86 @@
                   <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
                   <div class="form-error"></div>
                 </div>
-              </div>
-              <div class="form-row">
                 <div class="form-group">
                   <label for="phone">Phone Number</label>
                   <input type="tel" id="phone" class="form-input" placeholder="(555) 123-4567">
                   <div class="form-error"></div>
                 </div>
+                <div class="form-nav">
+                  <div></div>
+                  <button type="button" class="btn btn-primary btn-next" data-next="2">Continue</button>
+                </div>
+              </div>
+
+              <div class="form-step" data-step="2">
                 <div class="form-group">
-                  <label for="contactMethod">Preferred Contact <span class="required">*</span></label>
+                  <label for="clientType">Are you an individual or business? <span class="required">*</span></label>
+                  <select id="clientType" class="form-select form-input" required>
+                    <option value="">Select type</option>
+                    <option value="individual">Individual</option>
+                    <option value="business">Business</option>
+                  </select>
+                  <div class="form-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="serviceNeeded">What do you need help with?</label>
+                  <select id="serviceNeeded" class="form-select form-input">
+                    <option value="">Select a service (optional)</option>
+                    <option value="individual-return">Individual Tax Return</option>
+                    <option value="business-return">Business Tax Return</option>
+                    <option value="amendment">Amended Return</option>
+                    <option value="prior-year">Prior-Year Return</option>
+                    <option value="refund-advance">Refund Advance</option>
+                    <option value="other">Other / Not Sure</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message">Anything else we should know?</label>
+                  <textarea id="message" class="form-textarea form-input" placeholder="Tell us about your tax situation..." rows="4"></textarea>
+                </div>
+                <div class="form-nav">
+                  <button type="button" class="btn btn-outline btn-back" data-back="1">&#8592; Back</button>
+                  <button type="button" class="btn btn-primary btn-next" data-next="3">Continue</button>
+                </div>
+              </div>
+
+              <div class="form-step" data-step="3">
+                <div class="form-group">
+                  <label for="contactMethod">Preferred Contact Method <span class="required">*</span></label>
                   <select id="contactMethod" class="form-select form-input" required>
                     <option value="">Select method</option>
-                    <option value="call">Call</option>
-                    <option value="text">Text</option>
+                    <option value="call">Phone Call</option>
+                    <option value="text">Text Message</option>
                     <option value="email">Email</option>
                   </select>
                   <div class="form-error"></div>
                 </div>
+                <div class="form-group">
+                  <label for="bestTime">Best Time to Reach You <span class="required">*</span></label>
+                  <select id="bestTime" class="form-select form-input" required>
+                    <option value="">Select a time</option>
+                    <option value="morning">Morning (9am &ndash; 12pm)</option>
+                    <option value="afternoon">Afternoon (12pm &ndash; 5pm)</option>
+                    <option value="evening">Evening (5pm &ndash; 8pm)</option>
+                  </select>
+                  <div class="form-error"></div>
+                </div>
+                <div class="form-nav">
+                  <button type="button" class="btn btn-outline btn-back" data-back="2">&#8592; Back</button>
+                  <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="clientType">Are you an individual or business? <span class="required">*</span></label>
-                <select id="clientType" class="form-select form-input" required>
-                  <option value="">Select type</option>
-                  <option value="individual">Individual</option>
-                  <option value="business">Business</option>
-                </select>
-                <div class="form-error"></div>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" class="form-textarea form-input" placeholder="Tell us about your tax needs..." rows="5"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;">Send Message</button>
             </form>
 
             <div id="formSuccess" class="form-success">
               <div class="form-success-icon">&#9989;</div>
-              <h3>Message Sent!</h3>
-              <p>Thank you for reaching out. We'll get back to you as soon as possible, typically within 1 business day.</p>
-              <a href="index.html" class="btn btn-outline" style="margin-top:20px;">Back to Home</a>
+              <h3>Request Received!</h3>
+              <p>Thank you for reaching out. We'll contact you as soon as possible, typically within 1 business day.</p>
+              <div class="confirmation-summary" id="confirmationSummary"></div>
+              <div class="form-success-actions">
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+                <a href="tel:336-782-2551" class="btn btn-primary">&#9742; Call Now Instead</a>
+              </div>
             </div>
           </div>
         </div>
@@ -184,6 +244,7 @@
           <p>Nationwide (Virtual &amp; In-Person)</p>
         </div>
       </div>
+      <p class="footer-disclaimer">The information on this website is for general informational purposes only and does not constitute tax, legal, or financial advice. For advice specific to your situation, please consult a qualified professional.</p>
       <div class="footer-bottom">
         <p>&copy; 2026 AMFarmer Tax Services. All rights reserved.</p>
         <a href="privacy.html">Privacy Policy</a>
