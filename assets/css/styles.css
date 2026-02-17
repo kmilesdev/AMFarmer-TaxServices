@@ -902,6 +902,18 @@ img {
   gap: 8px;
 }
 
+.footer-disclaimer {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 24px;
@@ -1263,6 +1275,12 @@ img {
 .privacy-content h2 {
   font-size: 1.5rem;
   margin: 36px 0 12px;
+}
+
+.privacy-content h3 {
+  font-size: 1.15rem;
+  margin: 24px 0 10px;
+  color: var(--navy);
 }
 
 .privacy-content p,
