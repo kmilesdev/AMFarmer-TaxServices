@@ -9,14 +9,14 @@ A modern, premium tax services website for AMFarmer Tax Services. Built with pla
 ├── index.html          # Home page
 ├── services.html       # Services page
 ├── about.html          # About page
-├── contact.html        # Contact page
+├── contact.html        # Contact page (multi-step appointment form)
 ├── privacy.html        # Privacy Policy page
 ├── server.js           # Static file server (Node.js)
 ├── assets/
 │   ├── css/
 │   │   └── styles.css  # Main stylesheet
 │   ├── js/
-│   │   └── main.js     # JavaScript (nav, FAQ accordion, form validation)
+│   │   └── main.js     # JavaScript (nav, FAQ accordion, multi-step form)
 │   └── img/
 │       ├── branding-1.png  # Brand image
 │       └── branding-2.jpg  # Logo image
@@ -35,10 +35,23 @@ A modern, premium tax services website for AMFarmer Tax Services. Built with pla
 - Mobile-first responsive design
 - Sticky navigation with mobile hamburger menu
 - FAQ accordion
-- Contact form with client-side validation
+- Multi-step appointment request form (3 steps: Info, Service Details, Contact Preferences)
+  - Step 1: Name, email, phone
+  - Step 2: Client type, service needed, message
+  - Step 3: Preferred contact method, best time to reach you
+  - Confirmation summary after submit
+  - No backend: console.log only
 - Proper disclaimers for refund advances
+- Footer disclaimer on all pages: "not tax advice"
+- Privacy policy with form data collection details and deletion rights
 - SEO meta tags and OpenGraph tags
 - Accessibility: semantic HTML, aria labels, focus states
+
+## Compliance Rules
+- Never guarantee refunds, speed, acceptance, or outcomes
+- Refund Advance mentions always include third-party lender / eligibility disclaimer
+- Footer disclaimer on every page
+- Timing claims use qualifiers ("typically," "depending on complexity")
 
 ## Business Info
 - Owner: Alida Miles Farmer

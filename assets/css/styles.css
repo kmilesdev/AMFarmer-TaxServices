@@ -1184,6 +1184,115 @@ img {
   margin-bottom: 28px;
 }
 
+.form-subtitle {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 36px;
+  padding: 0 8px;
+}
+
+.stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.stepper-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 2px solid var(--gray-light);
+  color: var(--gray);
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+
+.stepper-step.active .stepper-circle {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.stepper-step.completed .stepper-circle {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+.stepper-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gray);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.stepper-step.active .stepper-label {
+  color: var(--navy);
+}
+
+.stepper-step.completed .stepper-label {
+  color: var(--gold);
+}
+
+.stepper-line {
+  flex: 1;
+  height: 2px;
+  background: var(--gray-light);
+  margin: 0 12px;
+  margin-bottom: 22px;
+  transition: background 0.3s ease;
+}
+
+.stepper-line.completed {
+  background: var(--gold);
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+  animation: fadeStep 0.3s ease;
+}
+
+@keyframes fadeStep {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
+  gap: 16px;
+}
+
+.form-nav .btn {
+  min-width: 140px;
+}
+
 .form-group {
   margin-bottom: 22px;
 }
@@ -1243,13 +1352,13 @@ img {
 
 .form-textarea {
   resize: vertical;
-  min-height: 130px;
+  min-height: 110px;
 }
 
 .form-success {
   display: none;
   text-align: center;
-  padding: 48px;
+  padding: 48px 32px;
 }
 
 .form-success-icon {
@@ -1264,6 +1373,59 @@ img {
 .form-success p {
   color: var(--gray);
   line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.confirmation-summary {
+  text-align: left;
+  background: var(--cream);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 28px;
+}
+
+.confirmation-summary h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.88rem;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.summary-value {
+  color: var(--navy);
+  font-weight: 600;
+  text-align: right;
+  max-width: 60%;
+  word-break: break-word;
+}
+
+.form-success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* ─── Privacy Page ─── */
@@ -1421,6 +1583,50 @@ img {
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .stepper-label {
+    font-size: 0.62rem;
+  }
+
+  .stepper-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.78rem;
+  }
+
+  .stepper-line {
+    margin: 0 6px;
+    margin-bottom: 18px;
+  }
+
+  .contact-form-card {
+    padding: 28px 20px;
+  }
+
+  .form-nav .btn {
+    min-width: 110px;
+    font-size: 0.85rem;
+  }
+
+  .summary-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .summary-value {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .form-success-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-success-actions .btn {
+    width: 100%;
+    max-width: 280px;
   }
 
   .hero-buttons {
