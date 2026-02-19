@@ -234,10 +234,9 @@ img {
 }
 
 .logo img {
-  height: 46px;
+  height: 50px;
   width: auto;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  object-fit: contain;
 }
 
 .logo-text {
