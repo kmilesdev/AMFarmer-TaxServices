@@ -1023,12 +1023,18 @@ img {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
 }
 
 .about-image img {
   width: 100%;
+  max-width: 320px;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .about-text h2 {
