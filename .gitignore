@@ -1,0 +1,22 @@
+# --- Replit / system ---
+.upm/
+.config/
+attached_assets/
+replit.nix
+.replit
+replit.md
+
+# --- Git / misc ---
+.git/
+.DS_Store
+
+# --- Secrets ---
+.env
+.env.*
+
+# --- Node / packages ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
