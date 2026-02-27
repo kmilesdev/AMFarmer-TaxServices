@@ -59,7 +59,7 @@ h2 { font-size: 2.25rem; }
 h3 { font-size: 1.5rem; }
 
 a {
-  color: var(--navy);
+  color: whitesmoke;
   text-decoration: none;
   transition: color var(--transition);
 }
