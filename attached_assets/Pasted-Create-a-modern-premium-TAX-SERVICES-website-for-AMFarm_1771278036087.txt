@@ -1,0 +1,84 @@
+Create a modern, premium TAX SERVICES website for AMFarmer Tax Services.
+
+Business info (use exactly):
+- Name: AMFarmer Tax Services
+- Tagline keywords: Quick • Efficient • Confidential
+- Phone: 336-782-2551
+- Email: amftaxsvcs@amfarmertax.com
+- Address: 5660 Byrd Rd, Burlington, NC 27217
+- Service area: Nationwide (virtual + in-person when applicable)
+- Credentials/claims to include carefully: “IRS Certified / E-file / Refund Advances”
+  - Do NOT guarantee outcomes or refunds.
+  - Add disclaimers wherever “refund advances” appears.
+
+Tech requirements:
+- Use plain HTML + CSS + vanilla JavaScript (no frameworks).
+- Mobile-first responsive design.
+- High trust design: navy/red/gold/white palette, subtle gradient backgrounds, elegant typography.
+- Accessibility basics (semantic HTML, alt text, keyboard focus states).
+- SEO basics (meta title/description, OpenGraph tags).
+- Fast loading: no heavy libraries.
+
+Pages (create these files):
+- index.html (Home)
+- services.html (Services)
+- about.html (About)
+- contact.html (Contact)
+- privacy.html (Privacy Policy)
+Plus shared assets:
+- assets/css/styles.css
+- assets/js/main.js
+- assets/img/branding-1.png  (already uploaded by user)
+- assets/img/branding-2.jpg  (already uploaded by user)
+
+Layout:
+- Sticky header with logo (use assets/img/branding-2.jpg) + nav links + “Book Now” button.
+- Footer with phone/email/address, hours placeholder, service area “Nationwide”, and Privacy link.
+
+Home page sections:
+1) Hero: strong headline + subheadline + CTA buttons (Call Now, Book Online).
+   - Use the brand vibe from uploaded images.
+2) Trust bar: IRS Certified / E-file / Refund Advances (with disclaimer).
+3) “How it works” (3 steps).
+4) Services preview grid (Individuals + Business).
+5) Testimonials (3) – realistic, not overhyped.
+6) FAQ accordion (6 questions) – include one about “Refund Advances” with disclaimer.
+7) Contact strip with Call/Text/Email buttons + “Book Online” link.
+
+Services page:
+- Split into Individuals and Businesses.
+- Include “All tax forms” language, but make it professional:
+  - “We handle most common and complex federal and state forms. If you have a unique situation, contact us for confirmation.”
+- Add a short list of example services: W-2, 1099/self-employed, itemized deductions, multi-state, amendments, prior-year returns, small business filings, etc.
+- Keep claims careful and compliant.
+
+About page:
+- Owner name: Alida Miles Farmer
+- Title: Tax Preparer/Owner
+- Emphasize values: quick, efficient, confidential, client care.
+- Do NOT claim CPA/EA unless explicitly provided.
+
+Contact page:
+- Display phone/email/address clearly.
+- Add a contact form:
+  Fields: Full Name, Email, Phone, Preferred Contact Method (Call/Text/Email), Individual or Business, Message.
+- Add JS validation.
+- On submit: show a success message and log to console (no backend yet).
+- Also include “Tap to call” and “Tap to text” links.
+
+Important interaction requirements:
+- “Call” button uses tel:336-782-2551
+- “Text” button uses sms:336-782-2551 (with a prefilled message if possible)
+- “Email” button uses mailto:amftaxsvcs@amfarmertax.com with subject “Tax Services Inquiry”
+- “Book Online” goes to contact.html#form (no separate booking page yet)
+
+Brand styling:
+- Use a navy primary, red accent, gold highlights.
+- Use clean serif for headings + sans-serif for body (Google Fonts allowed).
+- Use subtle gold separators and icon accents.
+
+Deliverables:
+- Provide the full code for every file.
+- Ensure navigation works on all pages.
+- Add a README.md with how to run and how to deploy (static hosting).
+Start by generating the file structure, then write the code for each file.
